@@ -1,0 +1,5 @@
+true=c(6.1,7,8.2,7.6,6.5,8.4,6.4)
+fal=c(5.2,7.9,3.9,4.7,5.3,5.4,4.2)
+shapiro.test(true)
+shapiro.test(fal)
+t.test(true,fal,paired = TRUE)

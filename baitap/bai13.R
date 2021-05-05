@@ -1,0 +1,5 @@
+name = c("R&B","Rock","Rap","Country","Classic","Latin")
+number = c(146.4,102.6,73.7,64.5,14.8,14.5)
+data = data.frame(name, number)
+print(data)
+pie(data$number, label = data$name)

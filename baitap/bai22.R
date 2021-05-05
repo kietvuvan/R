@@ -1,0 +1,19 @@
+m1=c(4.05,4.01,4.02,4.04)
+m2=c(3.99,4.02,4.01,3.99,4.00,4.00)
+m3=c(3.97,3.98,3.97,3.95,4.00,4.00)
+m4=c(4.00,4.02,3.99,4.01)
+m=c(m1,m2,m3,m4)
+loai=c(rep("M1",4),rep("M2",6),rep("M3",6),rep("M4",4))
+dat=data.frame(m,loai)
+x=aov(m~loai,data=dat)
+summary(x)
+boxplot(m~loai,data=dat)
+TukeyHSD(x)
+?aov
+#b
+b=kruskal.test(m~loai,data=dat)
+print(b)
+'luon su do tu 4 binh khong nh nhau H0: do nhu nhau,H1: khac nhau. p=0.01 bac bo H0 chap nhan H1'
+install.packages("pgirmess")
+require(pgirmess)
+print(kruskalmc(m~loai,data=dat))
